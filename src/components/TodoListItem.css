@@ -25,11 +25,13 @@ button {
 
 .btn-completed {
     display: inline-block;
-    background-color: #22ee22;
+    background-color: #225322;
+    color: white;
 }
 
 .btn-removed {
     display: inline-block;
-    background-color: #ee2222;
+    background-color: #d84f00;
+    color: white;
     margin-left: 8px;
 }
