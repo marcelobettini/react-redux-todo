@@ -1,21 +1,32 @@
 import React, { useEffect } from "react";
+import { connect } from "react-redux";
+import styled from "styled-components";
+import NewTodoForm from "./NewTodoForm";
+import TodoListItem from "./TodoListItem";
+import {
+  getTodosLoading,
+  getCompletedTodos,
+  getIncompletetodos,
+} from "./selectors";
 import {
   loadTodos,
   removeTodoRequest,
   markTodoAsCompletedRequest,
 } from "../thunks";
-import {
-  getTodos,
-  getTodosLoading,
-  getCompletedTodos,
-  getIncompletetodos,
-} from "./selectors";
-import { connect } from "react-redux";
-import NewTodoForm from "./NewTodoForm";
-import TodoListItem from "./TodoListItem";
 
-// import { displayAlert } from "../thunks";
-import "./TodoList.css";
+
+const ListWrapper = styled.div `
+  max-width: 70vw;
+  margin: auto;
+`;
+
+//creating a dummy styled  component
+const BigRedText = styled.h1`  
+font-family: Candara;
+font-size: 3rem;
+text-align: center;
+color: tomato;
+`;
 
 const TodoList = ({
   completedTodos,
@@ -31,7 +42,8 @@ const TodoList = ({
 
   const loadingMessage = <div>Loading todos...</div>;
   const content = (
-    <div className="list-wrapper">
+    <ListWrapper>
+      <BigRedText>ToDo List</BigRedText>
       <NewTodoForm />
       <h3>Incomplete:</h3>
       {incompleteTodos.map((todo) => (
@@ -49,7 +61,7 @@ const TodoList = ({
           onMarkPressed={onMarkPressed}
         />
       ))}
-    </div>
+    </ListWrapper>
   );
   return isLoading ? loadingMessage : content;
 };

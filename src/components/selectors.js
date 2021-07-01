@@ -1,5 +1,5 @@
 import { createSelector } from "reselect";
-import { todos } from "./reducers";
+// import { todos } from "./reducers";
 export const getTodos = (state) => state.todos.data;
 export const getTodosLoading = (state) => state.todos.isLoading;
 export const getIncompletetodos = createSelector(getTodos, (todos) =>

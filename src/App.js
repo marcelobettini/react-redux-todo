@@ -1,10 +1,22 @@
 import React from "react";
-import "./App.css";
+import styled from "styled-components";
 import TodoList from "./components/TodoList";
+
+const AppDiv = styled.div`
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: Arial, Helvetica, sans-serif;
+  color: #222222;
+`;
+
 const App = () => (
-  <div className="App">
+  <AppDiv>
     <TodoList></TodoList>
-  </div>
+  </AppDiv>
 );
 
 export default App;
