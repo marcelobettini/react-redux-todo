@@ -5,11 +5,10 @@ import autoMergeLevel2 from "redux-persist/es/stateReconciler/autoMergeLevel2";
 import thunk from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
 
-import { todos, isLoading } from "./components/reducers";
+import { todos } from "./components/reducers";
 
 const reducers = {
   todos,
-  isLoading,
 };
 const persistConfig = {
   key: "root",
